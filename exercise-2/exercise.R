@@ -13,11 +13,14 @@ random_salaries <- runif(100, 40000, 50000)
 # Create a vector of 100 salaries in 2018 that have changed from 2017
 # Use `runif()` to add a random number between -5000 and 10000 to each of 2017's
 # salaries (the negative number means that a salary may have decreased!)
-changed_salaries <- runif(100, -5000, 1000)
+changed_salaries <- random_salaries + runif(100, -5000, 1000)
 
 # Create a data frame 'salaries' by combining the 3 vectors you just made
 # Remember to set `stringsAsFactors=FALSE`!
-salaries <- data.frame(employees, random_salaries, changed_salaries, stringsAsFactors = FALSE)
+salaries <- data.frame(employees, 
+                       random_salaries, 
+                       changed_salaries, 
+                       stringsAsFactors = FALSE)
 
 # Create a column 'change' that stores each person's change in salary between
 # 2017 and 2018
